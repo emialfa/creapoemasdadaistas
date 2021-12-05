@@ -80,9 +80,7 @@ const BlankSheet = ({handleRemoveWord}) => {
     }
 
     const handleDownloadImg = (e) => {
-        document.getElementById('poemCanva').childNodes[0].toBlob(function(blob) {
-            saveAs(blob, `${namePoem.current.value}.png`); 
-        })
+        saveAs(document.getElementById('poemCanva').childNodes[0].src, `${namePoem.current.value}.png`);
     }
     return (
         <div className={styles.blanksheet__container}>
