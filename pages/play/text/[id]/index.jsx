@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import dbConnect from '../../../../lib/dbConnect';
 import Head from 'next/head'
 import { useEffect } from 'react';
@@ -6,7 +7,7 @@ import Layout from '../../../../components/Layout/Layout';
 import poemas from '../../../../models/modes'
 import { mediasQuerys } from '../../../../utils/mediasquerys'
 
-const text = ({modes}) => {
+const Text = ({modes}) => {
     useEffect(() => {
         document.oncontextmenu = function(){return false}
         mediasQuerys()
@@ -29,12 +30,12 @@ const text = ({modes}) => {
     )
 }
 
-export default text
+export default Text
 
 export async function getServerSideProps ({params}) {
     try {
         await dbConnect()
-        const result = await poemas.find({autor: params.id})
+        const result = await poemas.find({poema: params.id})
         const modes = result.map((doc) => {
           const mode = doc.toObject();
           mode._id = mode._id.toString();

@@ -63,11 +63,11 @@ export default function Home() {
             <div className={styles.homepage__slider}>
             <div className={styles.homepage__guidebuttonswrapper}>
             {texts.map((p, indice) => (
-                <div className={styles.homepage__GuideButton} style={{opacity: `${slideIndex === indice ? '1' : '.5'}`}}></div>))}
+                <div className={styles.homepage__GuideButton} key={'guidebutton'+indice} style={{opacity: `${slideIndex === indice ? '1' : '.5'}`}}></div>))}
             </div>
             <div className={styles.homepage_carousel}>
                 {texts.map((p, indice) => (
-                    <div style={{display: `${slideIndex === indice ? 'block': 'none'}`}}>
+                    <div key={'text'+indice} style={{display: `${slideIndex === indice ? 'block': 'none'}`}}>
                     <h1 className={styles.homepage__title}>{p.title}</h1>
                     <p className={styles.homepage__text}>{p.text}</p>
                     </div>

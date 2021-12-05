@@ -1,12 +1,12 @@
-import dbConnect from '../../lib/dbConnect'
-import poemas from '../../models/modes'
+import dbConnect from '../../../../lib/dbConnect';
 import Head from 'next/head'
-import Layout from '../../components/Layout/Layout'
-import Topbar from '../../components/Topbar/Topbar'
-import { useEffect } from 'react'
-import { mediasQuerys } from '../../utils/mediasquerys'
+import { useEffect } from 'react';
+import Topbar from '../../../../components/Topbar/Topbar';
+import Layout from '../../../../components/Layout/Layout';
+import poemas from '../../../../models/modes'
+import { mediasQuerys } from '../../../../utils/mediasquerys'
 
-const random = ({modes}) => {
+const Autor = ({modes}) => {
     useEffect(() => {
         document.oncontextmenu = function(){return false}
         mediasQuerys()
@@ -29,20 +29,19 @@ const random = ({modes}) => {
     )
 }
 
-export default random
+export default Autor
 
-
-export async function getServerSideProps() {
+export async function getServerSideProps ({params}) {
     try {
-      await dbConnect();
-      const result = await poemas.find();
-      const modes = result.map((doc) => {
-        const mode = doc.toObject();
-        mode._id = mode._id.toString();
-        return mode;
-      });
-      return { props: { modes } };
+        await dbConnect()
+        const result = await poemas.find({autor: params.id})
+        const modes = result.map((doc) => {
+          const mode = doc.toObject();
+          mode._id = mode._id.toString();
+          return mode;
+        });
+        return {props: { modes }}
     } catch (error) {
-      console.log(error);
+        console.log(error)
     }
-  }
+}

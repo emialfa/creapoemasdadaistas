@@ -89,7 +89,7 @@ const BlankSheet = ({handleRemoveWord}) => {
                 <div className={styles.blanksheet__dropzone} id="blanksheet">
                     <h3 id='blanksheetNotification' className={styles.blanksheet__dropzone_inactive}>Arrastra palabras aqui para crear tu poema...</h3>
                     {filas.map(f => (
-                        <div className={styles.blanksheet__dropzone__row} id={`blanksheet${f}`} 
+                        <div key={'blanksheet' + f} className={styles.blanksheet__dropzone__row} id={`blanksheet${f}`} 
                         onDragEnter={enter}
                         onDragOver={over}
                         onDragLeave={leave}
@@ -103,11 +103,11 @@ const BlankSheet = ({handleRemoveWord}) => {
         <div className={styles.blanksheet__dropzone__removeicon} id='deleteWord'  onTouchStart={handleTouchStartDelete}></div>
         <div className={styles.blanksheet__dropzone__saveicon} onClick={handleSave}>Guardar</div>
         <div className={styles.blanksheet__dropzone__shareicon} onClick={() => setHideSharedOptions(!hideSharedOptions)}>
-            <Image src={shareIcon} className={styles.blanksheet__dropzone__shareiconimg} /> 
+            <Image src={shareIcon} alt='share' className={styles.blanksheet__dropzone__shareiconimg} /> 
         {hideSharedOptions &&
             <div className={styles.blanksheet__dropzone__sharewindowwrapper}>
                 <div className={styles.blanksheet__dropzone__sharewindow}>
-                    <Image src={whatsappIcon} className={styles.blanksheet__dropzone__sharewindowicon} onClick={handleShare}/></div>
+                    <Image src={whatsappIcon} alt='whatsappShare' className={styles.blanksheet__dropzone__sharewindowicon} onClick={handleShare}/></div>
                 <div className={styles.blanksheet__dropzone__sharewindowtriangle}></div>
             </div>}
         </div>

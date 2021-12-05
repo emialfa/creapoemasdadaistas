@@ -1,13 +1,12 @@
-import { useRouter } from 'next/router'
-import dbConnect from '../../../../lib/dbConnect';
+import dbConnect from '../../lib/dbConnect'
+import poemas from '../../models/modes'
 import Head from 'next/head'
-import { useEffect } from 'react';
-import Topbar from '../../../../components/Topbar/Topbar';
-import Layout from '../../../../components/Layout/Layout';
-import poemas from '../../../../models/modes'
-import { mediasQuerys } from '../../../../utils/mediasquerys'
+import Layout from '../../components/Layout/Layout'
+import Topbar from '../../components/Topbar/Topbar'
+import { useEffect } from 'react'
+import { mediasQuerys } from '../../utils/mediasquerys'
 
-const text = ({modes}) => {
+const Random = ({modes}) => {
     useEffect(() => {
         document.oncontextmenu = function(){return false}
         mediasQuerys()
@@ -30,19 +29,20 @@ const text = ({modes}) => {
     )
 }
 
-export default text
+export default Random
 
-export async function getServerSideProps ({params}) {
+
+export async function getServerSideProps() {
     try {
-        await dbConnect()
-        const result = await poemas.find({poema: params.id})
-        const modes = result.map((doc) => {
-          const mode = doc.toObject();
-          mode._id = mode._id.toString();
-          return mode;
-        });
-        return {props: { modes }}
+      await dbConnect();
+      const result = await poemas.find();
+      const modes = result.map((doc) => {
+        const mode = doc.toObject();
+        mode._id = mode._id.toString();
+        return mode;
+      });
+      return { props: { modes } };
     } catch (error) {
-        console.log(error)
+      console.log(error);
     }
-}
+  }

@@ -8,7 +8,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import enter from '../public/images/enter.svg'
 
-const modes = ({modes}) => {
+const Modes = ({modes}) => {
     const [modesText, setModesText] = useState([])
     const [modesAutor, setModesAutor] = useState([])
     useEffect(() => {
@@ -31,7 +31,7 @@ const modes = ({modes}) => {
         <Topbar title="¡ELIGE UN MODO!" />
         <div className={styles.modespage__container}>
         {modesAutor.map(m => 
-            <Link  href={'/play/autor/' + m}>
+            <Link  key={'autor'+m}href={'/play/autor/' + m}>
             <a>
             <div className={styles.modespage__modecontainer}>
                 <div className={styles.modespage__modetopbar}>{m}</div>  
@@ -50,7 +50,7 @@ const modes = ({modes}) => {
             </Link>
             )}
             {modes.map(m => 
-            <Link href={'/play/text/' + m.poema}>
+            <Link key={'poema'+m.poema} href={'/play/text/' + m.poema}>
             <a>
             <div className={styles.modespage__modecontainer}>
                 <div className={styles.modespage__modetopbar}>{m.autor}</div>  
@@ -90,7 +90,7 @@ const modes = ({modes}) => {
     )
 }
 
-export default modes
+export default Modes
 
 export async function getServerSideProps() {
     try {
