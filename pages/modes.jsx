@@ -7,6 +7,7 @@ import Topbar from '../components/Topbar/Topbar'
 import Link from 'next/link'
 import Image from 'next/image'
 import enter from '../public/images/enter.svg'
+import Themes from '../components/Themes/Themes'
 
 const Modes = ({modes}) => {
     const [modesText, setModesText] = useState([])
@@ -86,6 +87,7 @@ const Modes = ({modes}) => {
             </a>
             </Link>
         </div>
+        <Themes />
         </>
     )
 }

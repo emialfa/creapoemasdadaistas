@@ -1,0 +1,17 @@
+.themes__themescontainer{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    height: 100px;
+    margin-top: -50px;
+}
+
+.themes__theme{
+    display: flex;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin: 10px;
+    cursor: pointer;
+}

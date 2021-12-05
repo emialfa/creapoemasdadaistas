@@ -4,6 +4,7 @@ import styles from '../styles/Homepage.module.css'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import logo from '../public/images/logo.png'
+import Themes from '../components/Themes/Themes'
 
 const texts = [{
   title: '¡Creá tu poema dadaísta!', 
@@ -31,7 +32,7 @@ export default function Home() {
       document.body.style.zoom = 1;
   }, [])
   return (
-    <div>
+    <>
       <Head>     
         <title>¡Creá tu poema dadaísta! | CreaPoemasdadaistas</title>
         <meta name='description' content='CreaPoemasdadaistas es un juego solitario o multijugador en el cual crearás un poema a partir de las palabras que el "azar" te provea.' />
@@ -50,7 +51,7 @@ export default function Home() {
                 <div className={styles.homepage__button1}>Juego rápido</div>
               </a>
             </Link>
-            <Link href='/modes?name=rodolgo'>
+            <Link href='/modes'>
               <a>
                 <div className={styles.homepage__button2}>Juego con modos</div>
              </a>
@@ -83,6 +84,7 @@ export default function Home() {
             </div>
         </div>
         </div>
-    </div>
+        <Themes />
+    </>
   )
 }

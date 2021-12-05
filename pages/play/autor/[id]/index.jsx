@@ -5,6 +5,7 @@ import Topbar from '../../../../components/Topbar/Topbar';
 import Layout from '../../../../components/Layout/Layout';
 import poemas from '../../../../models/modes'
 import { mediasQuerys } from '../../../../utils/mediasquerys'
+import Themes from '../../../../components/Themes/Themes';
 
 const Autor = ({modes}) => {
     useEffect(() => {
@@ -25,6 +26,7 @@ const Autor = ({modes}) => {
       </Head>
             <Topbar title="¡CREÁ TU POEMA DADAISTA!"/>
             <Layout allWords={modes} />
+            <Themes />
         </>
     )
 }

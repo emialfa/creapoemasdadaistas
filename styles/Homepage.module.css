@@ -20,7 +20,9 @@
     margin:1rem 0px;
     cursor: pointer;
     }
-
+.homepage__button1:hover{
+    opacity: 0.9;
+}
 .homepage__button2 {
     display:flex;
     background: #FFFFFF;
@@ -37,6 +39,9 @@
     color: var(--my-background-color);
     margin:1rem 0px;
     cursor: pointer;
+}
+.homepage__button2:hover{
+    opacity: 0.9;
 }
 
 .homepage__themescontainer{
@@ -108,12 +113,13 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    padding-bottom: 2rem;
 }
 
 .homepage__guidebuttonswrapper{
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: 2rem;
     left: 0;
     z-index: 2;
     display: flex;

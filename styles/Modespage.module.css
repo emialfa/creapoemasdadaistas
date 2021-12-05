@@ -16,6 +16,10 @@
     margin: 1rem;
 }
 
+.modespage__modecontainer:hover{
+    opacity: 0.9;
+}
+
 .modespage__modetopbar{
     display:flex;
     justify-content: center;

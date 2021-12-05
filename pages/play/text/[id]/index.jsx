@@ -6,6 +6,7 @@ import Topbar from '../../../../components/Topbar/Topbar';
 import Layout from '../../../../components/Layout/Layout';
 import poemas from '../../../../models/modes'
 import { mediasQuerys } from '../../../../utils/mediasquerys'
+import Themes from '../../../../components/Themes/Themes';
 
 const Text = ({modes}) => {
     useEffect(() => {
@@ -26,6 +27,7 @@ const Text = ({modes}) => {
       </Head>
             <Topbar title="¡CREÁ TU POEMA DADAISTA!"/>
             <Layout allWords={modes} />
+            <Themes />
         </>
     )
 }

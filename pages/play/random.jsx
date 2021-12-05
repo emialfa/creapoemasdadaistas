@@ -5,6 +5,7 @@ import Layout from '../../components/Layout/Layout'
 import Topbar from '../../components/Topbar/Topbar'
 import { useEffect } from 'react'
 import { mediasQuerys } from '../../utils/mediasquerys'
+import Themes from '../../components/Themes/Themes'
 
 const Random = ({modes}) => {
     useEffect(() => {
@@ -25,6 +26,7 @@ const Random = ({modes}) => {
       </Head>
             <Topbar title="¡CREÁ TU POEMA DADAISTA!"/>
             <Layout allWords={modes} />
+            <Themes />
         </>
     )
 }
