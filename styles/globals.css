@@ -14,3 +14,20 @@ a {
 * {
   box-sizing: border-box;
 }
+
+:root {
+  /*--my-background-color: rgba(247, 224, 1, 0.95);*/
+  --my-font: 'Urbanist', sans-serif;
+}
+
+body {
+  --my-background-color: rgba(186, 235, 220, 0.92);
+  margin: 0;
+  font-family: var(--my-font);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url('../public/images/background.png');
+  background-color: rgba(196, 196, 196, 0.62);
+  background-repeat: repeat-y;
+  background-size: 100%;
+}
