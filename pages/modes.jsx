@@ -26,7 +26,7 @@ const Modes = ({modes}) => {
             <meta name='description' content='CreaPoemasdadaistas es un juego solitario o multijugador en el cual crearás un poema a partir de las palabras que el "azar" te provea.' />
             <link 
                 href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" 
-                rel="stylesheet" crossorigin="anonymous"
+                rel="stylesheet"
             />
         </Head>
         <Topbar title="¡ELIGE UN MODO!" />
