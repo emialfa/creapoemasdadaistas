@@ -41,6 +41,7 @@ const WordsBag = ({ width, title, words, removeWord }) => {
         if (words.length > 0){
             const selectWords = mixWords(words)
             setWordss({words: selectWords, change: wordss.change + 1})
+            console.log(wordss.words)
         }
     }, [words])
 
@@ -56,13 +57,15 @@ const WordsBag = ({ width, title, words, removeWord }) => {
     }
 
     const handleOptions= (e) => {
-        console.log(e.target.childNodes)
-        console.log(e.target.parentNode.childNodes[1])
-        const element = e.target.parentNode
-        element.style.opacity = 1;
-        element.childNodes[0].style.opacity = 1;
-        element.childNodes[1].classList.toggle(styles.none)
-        element.classList.toggle(styles.zindex)
+        if(e.target.parentNode.childNodes[1]){
+            console.log(e.target.childNodes)
+            console.log(e.target.parentNode.childNodes[1])
+            const element = e.target.parentNode
+            element.style.opacity = 1;
+            element.childNodes[0].style.opacity = 1;
+            element.childNodes[1].classList.toggle(styles.none)
+            element.classList.toggle(styles.zindex)
+        }
     }
 
     const handleOptionChange = (e) => {
@@ -90,9 +93,9 @@ const WordsBag = ({ width, title, words, removeWord }) => {
                         onDragStart={start} 
                         onDragEnd={handleDragEnd} 
                         onTouchStart={handleTouch}
-                        onContextMenu={handleOptions}><div className={styles.wordsbag__wordtext} style={{cursor: typeof w === 'string' ? 'pointer' : 'copy'}}>{card}</div><div className={`${styles.wordsbag__wordoptions} ${styles.none}`} style={{height: `${Object.keys(w).length * 22 - 22}px`}}>
-                            {typeof w === 'object' && Object.keys(w).map((p, indice) => indice > 0 && <div className={styles.wordsbag__wordoption} onClick={handleOptionChange}>{w[p]}</div>)}
-                            </div></div>) 
+                        onContextMenu={handleOptions}><div className={styles.wordsbag__wordtext} style={{cursor: typeof w === 'string' ? 'pointer' : Object.keys(w).length > 1 ? 'copy' : 'pointer'}}>{card}</div>
+                            {typeof w === 'object' && Object.keys(w).map((p, indice) => indice > 0 && <div className={`${styles.wordsbag__wordoptions} ${styles.none}`} style={{height: `${Object.keys(w).length * 22 - 22}px`}}><div className={styles.wordsbag__wordoption} onClick={handleOptionChange}>{w[p]}</div></div>)}
+                            </div>) 
                 })}
                 </div>
             </div>
