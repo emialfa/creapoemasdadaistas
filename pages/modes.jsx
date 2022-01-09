@@ -35,7 +35,7 @@ const Modes = ({modes}) => {
         <div className={styles.modespage__container}>
         {modesAutor.map(m => 
             <Link  key={'autor'+m}href={'/play/autor/' + m}>
-            <a>
+            <a className='animate-pulse'>
             <div className={styles.modespage__modecontainer}>
                 <div className={styles.modespage__modetopbar}>{m}</div>  
                 <div className={styles.modespage__modebody}>
@@ -54,7 +54,7 @@ const Modes = ({modes}) => {
             )}
             {modes.map(m => 
             <Link key={'poema'+m.poema} href={'/play/text/' + m.poema}>
-            <a>
+            <a className='animate-pulse'>
             <div className={styles.modespage__modecontainer}>
                 <div className={styles.modespage__modetopbar}>{m.autor}</div>  
                 <div className={styles.modespage__modebody}>
@@ -72,7 +72,7 @@ const Modes = ({modes}) => {
             </Link>
             )}
             <Link href='/play/random' >
-            <a>
+            <a className='animate-pulse'>
              <div className={styles.modespage__modecontainer}>
                 <div className={styles.modespage__modetopbar}>Random</div>  
                 <div className={styles.modespage__modebody}>

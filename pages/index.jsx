@@ -31,6 +31,7 @@ export default function Home() {
   useEffect(() => {
       document.body.style.zoom = 1;
   }, [])
+
   return (
     <>
       <Head>     
@@ -47,12 +48,12 @@ export default function Home() {
             <div className={styles.homepage__left}>
                 <div className={styles.homepage__buttonscontainer}>
             <Link href='/play/random'>
-              <a>
+              <a className='animate-pulse'>
                 <div className={styles.homepage__button1}>Juego rápido</div>
               </a>
             </Link>
             <Link href='/modes'>
-              <a>
+              <a className='animate-pulse'>
                 <div className={styles.homepage__button2}>Juego con modos</div>
              </a>
             </Link>

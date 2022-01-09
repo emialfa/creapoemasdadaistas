@@ -21,7 +21,7 @@
     cursor: pointer;
     }
 .homepage__button1:hover{
-    opacity: 0.9;
+    transform: scale(1.05);
 }
 .homepage__button2 {
     display:flex;
@@ -41,7 +41,7 @@
     cursor: pointer;
 }
 .homepage__button2:hover{
-    opacity: 0.9;
+    transform: scale(1.05);
 }
 
 .homepage__themescontainer{

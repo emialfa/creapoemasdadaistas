@@ -43,3 +43,13 @@ body {
 .funky {
   --my-background-color: rgba(247, 224, 1, 0.95);   
 }
+
+.animate-pulse:hover {
+    -webkit-animation: pulse 1s;
+    animation: pulse 1s;
+}
+.animate-pulse:active, .animate-pulse:visited {
+  -webkit-animation: pulse 1s;
+  animation: pulse 1s;
+  cursor: wait;
+}

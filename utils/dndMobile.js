@@ -16,13 +16,13 @@ export function touchStart(e) {
         console.log(e.target)
         if (e.target.parentNode !== element && typeof element !== 'string'){
             element.style.border = 'none';
-            e.target.parentNode.style.border = 'dotted 1px black';
+            e.target.parentNode.style.border = '2px solid darkblue';
             e.target.parentNode.style.opacity = 1;
             element = e.target.parentNode;
             console.log(element)
         }
         else if (element.length == 0) {
-            e.target.parentNode.style.border = 'dotted 1px black';
+            e.target.parentNode.style.border = '2px solid darkblue';
             e.target.parentNode.style.opacity = 1;
             element = e.target.parentNode;
             console.log(element)
