@@ -232,6 +232,9 @@
     .homepage__left{
         width: 100%;
     }
+    .homepage__buttonscontainer{
+        height: 70vh;
+    }
     .homepage__right{
         width: 100%;
     }

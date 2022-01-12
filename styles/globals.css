@@ -29,7 +29,8 @@ body {
   background-image: url('../public/images/background.png');
   background-color: rgba(196, 196, 196, 0.62);
   background-repeat: repeat-y;
-  background-size: 100%;
+  background-size: auto;
+  display: flex;
 }
 
 .light-theme {
@@ -52,4 +53,11 @@ body {
   -webkit-animation: pulse 1s;
   animation: pulse 1s;
   cursor: wait;
+}
+
+@supports(zoom:1) {
+  body{
+  background-size: 100% !important;
+  display: block !important;
+}
 }
