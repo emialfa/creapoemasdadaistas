@@ -4,7 +4,7 @@ import reload from '../../public/images/reload.svg'
 import { useState, useEffect } from 'react'
 import {start, end} from '../../utils/draganddrop'
 import uuid from 'react-uuid'
-import {touchMove, touchEnd, touchStart} from '../../utils/dndMobile'
+import { touchStart} from '../../utils/dndMobile'
 
 const WordsBag = ({ width, title, words, removeWord }) => {
     const [wordss, setWordss] = useState({words: [], change: 0})
@@ -17,12 +17,7 @@ const WordsBag = ({ width, title, words, removeWord }) => {
         setWordss({words: selectWords, change: wordss.change + 1})
     }
 
-    const handleTouchEnd = (e) => {
-        const res = touchEnd(e);
-        console.log(res);
-        const selectWords = wordss.words.filter(w => w !== res);
-        setWordss({words: selectWords, change: wordss.change + 1})
-    }
+   
     const handleTouch = (e) => {
         touchStart(e)
     }
