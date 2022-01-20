@@ -1,34 +1,21 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Creapoemasdadaistas
 
-## Getting Started
+Game in process.
 
-First, run the development server:
+## Technologies being used:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />  <img src="https://img.shields.io/badge/Next-20232A?style=for-the-badge&logo=next.js&logoColor=white" />  <img src="https://img.shields.io/badge/Material--UI-0081CB?style=for-the-badge&logo=material-ui&logoColor=white" />
+<img src="https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white" />  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" />  <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=MongoDB&logoColor=white" />
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Homepage, modes page, game page and save page:
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+<img src="https://res.cloudinary.com/djqqjhsaq/image/upload/v1642716972/HomePage_-_views_tv55iu.png" />
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+<img src="https://res.cloudinary.com/djqqjhsaq/image/upload/v1642716974/HomePage_Yellow_-_views_vivcwl.png" />
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+<img src="https://res.cloudinary.com/djqqjhsaq/image/upload/v1642716974/ModesPage_-_views_n4ztkf.png" />
 
-## Learn More
+<img src="https://res.cloudinary.com/djqqjhsaq/image/upload/v1642716967/GamePage_-_views_fy97mp.png" />
 
-To learn more about Next.js, take a look at the following resources:
+<img src="https://res.cloudinary.com/djqqjhsaq/image/upload/v1642716967/SavePoem_-_views_fcudy3.png" />
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
