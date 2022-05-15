@@ -53,9 +53,6 @@ const Layout = ({allWords}) => {
             setSustantivos(orderWords("sustantivos", {sustantivos1: words.sustantivos1, sustantivos2: words.sustantivos2, sustantivos3: words.sustantivos3, sustantivos4: words.sustantivos4}))
             setAdjetivos(orderWords("adjetivos", {adjetivos1:words.adjetivos1, adjetivos2:words.adjetivos2, adjetivos3:words.adjetivos3, adjetivos4:words.adjetivos4}))
             setVerbos(orderWords("verbos", {verbos1: words.verbos1, verbos2: words.verbos2, verbos3: words.verbos3, verbos4: words.verbos4}))
-            //setSustantivos(words.sustantivos1)
-            //setAdjetivos(words.adjetivos1)
-            //setVerbos(words.verbos1)
             setAdverbios(words.adverbios)
     },[])
     

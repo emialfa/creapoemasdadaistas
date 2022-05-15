@@ -1,38 +1,22 @@
-import {start, end1} from './draganddrop'
-    
-    /* listen to the touchMove event,
-    every time it fires, grab the location
-    of touch and assign it to box */
-    
-    function preventDefault(e) {
-        e.preventDefault();
-    }
-    let elementId = '';
-    let element = '';
-    const arrElementsCloned = []
+let element = '';
+const arrElementsCloned = []
 
-    export function touchStart(e) {
-        //e.preventDefault()
-        //window.addEventListener('touchscroll', (e) => {e.preventDefault(); e.stopPropagation()}, { passive: false })
-        console.log(e.target)
-        if (e.target.parentNode !== element && typeof element !== 'string'){
-            element.style.border = 'none';
-            e.target.parentNode.style.border = '2px solid darkblue';
-            e.target.parentNode.style.opacity = 1;
-            element = e.target.parentNode;
-            console.log(element)
-        }
-        else if (element.length == 0) {
-            e.target.parentNode.style.border = '2px solid darkblue';
-            e.target.parentNode.style.opacity = 1;
-            element = e.target.parentNode;
-            console.log(element)
-        }
+export function touchStart(e) {
+    if (e.target.parentNode !== element && typeof element !== 'string'){
+        element.style.border = 'none';
+        e.target.parentNode.style.border = '2px solid darkblue';
+        e.target.parentNode.style.opacity = 1;
+        element = e.target.parentNode;
     }
+    else if (element.length == 0) {
+        e.target.parentNode.style.border = '2px solid darkblue';
+        e.target.parentNode.style.opacity = 1;
+        element = e.target.parentNode;
+    }
+}
 
 export function touchStartDrop (e) {
     let posElem = e.target.getBoundingClientRect()
-    console.log(e.target)
     var touchLocation = e.targetTouches[0];
     var zoomLevel = getComputedStyle(document.body).zoom;
     let x;
@@ -55,7 +39,6 @@ export function touchStartDrop (e) {
         return '';
     }
     else if (typeof element !== 'string'){
-        console.log(x)
         const elementCloned = element.cloneNode(true)
         e.target.appendChild(elementCloned)
         elementCloned.id = element.id+'cloned'
@@ -68,9 +51,6 @@ export function touchStartDrop (e) {
         elementCloned.addEventListener("touchstart", touchStart); 
         const elementText = element.childNodes[0].textContent
         document.getElementById('blanksheetNotification').style.display = 'none'
-        console.log(element.id)
-        console.log(elementCloned.id)
-        console.log(arrElementsCloned)
         const condition = arrElementsCloned.find(cloned => cloned == element.id)
         condition && element.parentNode.removeChild(element)
         element = '';
@@ -78,7 +58,6 @@ export function touchStartDrop (e) {
         setTimeout(() => 
         e.target.style.boxShadow= ''
         , 500)
-       console.log(condition)
         return condition ? '' : elementText;
     }
     return '';

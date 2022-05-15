@@ -1,7 +1,5 @@
 import styles from './blanksheet.module.css'
-import remove from '../../public/images/delete.svg'
-import share from '../../public/images/share.svg'
-import {enter, over, leave, drop, eliminar} from '../../utils/draganddrop'
+import {enter, over, leave, drop} from '../../utils/draganddrop'
 import {capturePhoto} from '../../utils/capturePhoto'
 import {touchStartDrop, touchStartDelete} from '../../utils/dndMobile'
 import {useState, useRef} from 'react'
@@ -13,13 +11,11 @@ import Image from 'next/image'
 const filas = [0, 1, 2, 3, 4, 5, 6, 7 ,8, 9]
 const BlankSheet = ({handleRemoveWord}) => {
     const [hideSaveWindow, setHideSaveWindow] = useState(false)
-    const [hideNotification, setHideNotification] = useState(false)
     const [hideSharedOptions, setHideSharedOptions] = useState(false)
     const namePoem = useRef('')
     const handleSave = (e) => {
         setHideSaveWindow(true)
         capturePhoto(e, document.getElementById('blanksheet').textContent.substring(0,8)).then(res =>{
-            console.log(res)
             res.style.width= '500px';
             res.style.height= 'auto';
             res.style.borderRadius= '30px 30px 0px 0px';
@@ -58,24 +54,17 @@ const BlankSheet = ({handleRemoveWord}) => {
         }
         poem.forEach((p) => {
             poemText+= p.join(" ") + "\n"
-            console.log(p.join(" "))
         })
-        console.log(poemText)
-        window.open("https://api.whatsapp.com/send?text=" + encodeURIComponent(poemText), '_blank', 'noopener');
-        //window.open("http://www.facebook.com/sharer.php?u=" + encodeURIComponent(poemText), '_blank', 'noopener');
-
-        
+        window.open("https://api.whatsapp.com/send?text=" + encodeURIComponent(poemText), '_blank', 'noopener');    
     }
 
     const handleTouchStartDrop = (e) => {
         const res = touchStartDrop(e)
-        console.log(res)
         handleRemoveWord(res)
     }
 
     const handleTouchStartDelete = (e) => {
         const res = touchStartDelete(e)
-        console.log(res)
         handleRemoveWord(res)
     }
 
@@ -87,7 +76,7 @@ const BlankSheet = ({handleRemoveWord}) => {
                 <div className={styles.blanksheet__dropzone} id="blanksheet">
                     <h3 id='blanksheetNotification' className={styles.blanksheet__dropzone_inactive}>Arrastra palabras aqui para crear tu poema...</h3>
                     {filas.map(f => (
-                        <div key={'blanksheet' + f} className={styles.blanksheet__dropzone__row} id={`blanksheet${f}`} 
+                        <div key={'blanksheet' + f} className={styles.blanksheet__dropzone__row} id={`blanksheet${f}`} draggable='false'
                         onDragEnter={enter}
                         onDragOver={over}
                         onDragLeave={leave}

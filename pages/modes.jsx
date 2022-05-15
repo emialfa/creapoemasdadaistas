@@ -96,7 +96,7 @@ const Modes = ({modes}) => {
 
 export default Modes
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
     try {
       await dbConnect();
       const result = await poemas.find().select('autor poema');

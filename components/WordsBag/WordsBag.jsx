@@ -12,12 +12,10 @@ const WordsBag = ({ width, title, words, removeWord }) => {
     const handleDragEnd = (e) => {
         let res = end(e);
         res = res.split(" ")[0];
-        console.log(res);
         const selectWords = wordss.words.filter(w => typeof w === 'string' ? w !== res : !Object.keys(w).find(e => w[e] == res));
         setWordss({words: selectWords, change: wordss.change + 1})
     }
 
-   
     const handleTouch = (e) => {
         touchStart(e)
     }
@@ -36,12 +34,10 @@ const WordsBag = ({ width, title, words, removeWord }) => {
         if (words.length > 0){
             const selectWords = mixWords(words)
             setWordss({words: selectWords, change: wordss.change + 1})
-            console.log(wordss.words)
         }
     }, [words])
 
     useEffect(() => {
-        console.log(removeWord);
         const selectWords = wordss.words.filter(w => typeof w === 'string' ? w !== removeWord : !Object.keys(w).find(e => w[e] == removeWord));
         setWordss({words: selectWords, change: wordss.change + 1})
     },[removeWord])
@@ -53,8 +49,6 @@ const WordsBag = ({ width, title, words, removeWord }) => {
 
     const handleOptions= (e) => {
         if(e.target.parentNode.childNodes[1]){
-            console.log(e.target.childNodes)
-            console.log(e.target.parentNode.childNodes[1])
             const element = e.target.parentNode
             element.style.opacity = 1;
             element.childNodes[0].style.opacity = 1;
@@ -64,12 +58,10 @@ const WordsBag = ({ width, title, words, removeWord }) => {
     }
 
     const handleOptionChange = (e) => {
-        console.log(e.target.parentNode.parentNode.id)
         const element =  document.getElementById(e.target.parentNode.parentNode.id)
         const elementText = element.childNodes[0].textContent
         element.style.opacity = 1;
         element.childNodes[0].style.opacity = 1;
-        console.log(e.target.textContent)
         element.childNodes[0].textContent = e.target.textContent
         e.target.textContent = elementText
         element.childNodes[1].classList.toggle(styles.none)
@@ -89,7 +81,9 @@ const WordsBag = ({ width, title, words, removeWord }) => {
                         onDragEnd={handleDragEnd} 
                         onTouchStart={handleTouch}
                         onContextMenu={handleOptions}><div className={styles.wordsbag__wordtext} style={{cursor: typeof w === 'string' ? 'pointer' : Object.keys(w).length > 1 ? 'copy' : 'pointer'}}>{card}</div>
-                            {typeof w === 'object' && Object.keys(w).map((p, indice) => indice > 0 && <div className={`${styles.wordsbag__wordoptions} ${styles.none}`} style={{height: `${Object.keys(w).length * 22 - 22}px`}}><div className={styles.wordsbag__wordoption} onClick={handleOptionChange}>{w[p]}</div></div>)}
+                            <div className={`${styles.wordsbag__wordoptions} ${styles.none}`} style={{height: `${Object.keys(w).length * 22 - 22}px`}}>
+                            {typeof w === 'object' && Object.keys(w).map((p, indice) => indice > 0 && <div className={styles.wordsbag__wordoption} onClick={handleOptionChange}>{w[p]}</div>)}
+                            </div>
                             </div>) 
                 })}
                 </div>
